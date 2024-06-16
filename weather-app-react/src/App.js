@@ -5,8 +5,10 @@ function App() {
 
   const [data, setData] = useState({})
   const [location, setLocation] = useState("")
+  const [backgroundImage, setBackgroundImage] = useState("")
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=298002a528c8fee63b2766d9ec4b3086`
+ // const url1 = `https://api.unsplash.com/photos/random?client_id=jzipXJ58oAvUwTEpKvw8o71FwcBUXvNlgvMxHHBnFGw`
 
   const searchLocation = (event) =>{
     if (event.key ==='Enter'){
@@ -15,6 +17,17 @@ function App() {
       console.log(response.data)
       })
       setLocation('')
+      
+      // try{
+      //     axios.get(url1).then((response) => {
+      //     setBackgroundImage(response.data)
+      //     console.log(response.data)
+      //     })
+      //     const imgURL = response.data.results[0].urls.regular;
+      //     setBackgroundImage(imgURL)
+      // } catch {
+      //   console.error('Error fetching image', error)
+      // }
     }
   }
 
